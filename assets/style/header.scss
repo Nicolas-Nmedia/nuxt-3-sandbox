@@ -1,0 +1,39 @@
+@layer application {
+    body > header {
+        box-shadow: 0px 4px 5px -1px hsl(0 0% 0% / .4);
+    }
+
+    @property --y-pos {
+        syntax: "<percentage>";
+        initial-value: 120%;
+        inherits: false;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 1.5rem;
+
+        a {
+            padding-block: var(--space-4);
+            color: inherit;
+
+            background: linear-gradient(
+                    180deg,
+                    hsl(140 100% 10% / 0) var(--y-pos),
+                    hsl(140 100% 10% / .5) 120%);
+
+            transition:
+                --y-pos 400ms ease-out;
+
+            &:is(:hover,
+                :focus-visible) {
+                --y-pos: 80%;
+            }
+        }
+        
+        .router-link-active:not(.main-logo) {
+            text-decoration: none;
+            border-bottom: 4px solid hsl(140, 100%, 20%);
+        }
+    }
+}

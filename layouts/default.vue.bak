@@ -1,0 +1,18 @@
+<script setup lang="ts">
+import HeaderMain from '~~/components/HeaderMain.vue';
+
+
+</script>
+
+<template>
+    <HeaderMain />
+    
+    <!-- Main content -->
+    <main class="flow-content">
+        <slot />
+    </main>
+</template>
+
+<style lang="scss">
+
+</style>

@@ -1,0 +1,7 @@
+@layer application {
+    body > * {
+        inline-size: min(120ch, (100% - (2 * var(--space-4))));
+        margin-inline: auto;
+        padding-inline: var(--space-4);
+    }
+}

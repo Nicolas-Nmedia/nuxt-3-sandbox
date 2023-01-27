@@ -1,0 +1,31 @@
+@use "layers-definition";
+@use "typography";
+@use "structure";
+@use "header";
+
+@layer resets {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    img {
+        max-inline-size: 100%;
+    }
+}
+
+@layer application {
+    :root {
+        --space-4: 1rem;
+        --space-5: calc(var(--space-4) * 1.25);
+    }
+    
+    body > * + * {
+        margin-block-start: 2rem;
+    }
+
+    .flow-content > * + *,
+    p + p {
+        margin-block-start: 1.4rem;
+    }
+}
